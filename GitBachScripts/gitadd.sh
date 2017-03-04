@@ -1,8 +1,15 @@
 #!/bin/bash
-echo enter
 
-a=0
+testDir="/home/george/Desktop/testDirectory"
+
+i=0
 for FILE in "$@"
 do
-	git add $FILE
+	if [ $i -eq 0 ]
+		then
+			cd $testDir
+		else
+			git add $FILE
+		fi
+		((i=i+1))
 done

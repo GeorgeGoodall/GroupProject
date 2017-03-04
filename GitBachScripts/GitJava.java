@@ -1,39 +1,37 @@
 import java.lang.ProcessBuilder;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.BufferedReader
+import java.io.BufferedReader;
+import java.io.File;
 
 
 public class GitJava{
 
-	ProcessBuilder pb = new ProcessBuilder("myshellScript.sh", "myArg1", "myArg2");
-	Map<String, String> env = pb.environment();
-	env.put("VAR1", "myValue");
-	env.remove("OTHERVAR");
-	env.put("VAR2", env.get("VAR1") + "suffix");
-	pb.directory(new File("myDir"));
-	Process p = pb.start();
-
-	public void status(){
+	public GitJava(){
 
 	}
 
-	public void add(){
-
+	public String[] status(String directory){
+		return runProcess(directory, "gitStatus.sh", new String[0]);
 	}
 
-	public void commit(){
+	public String[] add(String directory, String[] filesToAdd){
+		return runProcess(directory, "gitadd.sh", filesToAdd);
+	}
 
+	public String[] commit(String directory, String message){
+		return runProcess(directory, "gitcommit.sh", new String[]{message});
 	}
 
 	public void remove(){
 
 	}
 
-	public void init(){
-
+	public String[] init(String directory){
+		return runProcess(directory, "gitInit.sh", new String[0]);
 	}
 
 	public void pull(){
@@ -53,33 +51,51 @@ public class GitJava{
 
 	//git remote
 
-	private void runProcess(String directory,String... args){
+	private String[] runProcess(String directory,String operation, String[] args){
 
-		String[] result;
+		ArrayList<String> resultlist = new ArrayList<String>();
 
 		// make processBuilder and set directory
-		List perams = Arrays.asList(args);
-		ProcessBuilder pb = new ProcessBuilder(perams);
-		ProcessBuilder.directory(new File(directory));
-		Process process = pb.start();
-
-		//read output
-		InputStream is = process.getInputStream();
-		InputStreamReader isr = new InputStreamReader(is);
-		BufferedReader br = new BufferedReader(isr);
-		String line;
-		int i = 0;
-		while((line = br.readLine()) != null){
-			result[i] = line;
+		List<String> perams = new ArrayList<String>();
+		perams.add(0,System.getProperty("user.dir") + "/" + operation);
+		perams.add(1,directory);
+		
+		for(int i = 0; i < args.length; i++){
+			perams.add(args[i]);
 		}
+		ProcessBuilder pb = new ProcessBuilder("/bin/bash");
+		pb.command(perams);
+		pb.directory(new File(System.getProperty("user.dir")));
+		try{
+			Process process = pb.start();
+			//create needed objects to read output
+			InputStream is = process.getInputStream();
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+			String line;
+			try{
+				while((line = br.readLine()) != null){
+					resultlist.add(line);
+				}
+			}
+			catch(Exception e){
+				System.out.println("Error reading bash script output: " + e);
+			}
+			//Wait to get exit value
+        	try {
+            	int exitValue = process.waitFor();
+	        } 
+	        catch (InterruptedException e) {
 
-		//Wait to get exit value
-        try {
-            int exitValue = process.waitFor();
-        } 
-        catch (InterruptedException e) {
+	        }
+	        
+		}
+		catch(Exception e){System.out.println("Error starting processBuilder: " + e);}
+		
+		return resultlist.toArray(new String[0]);
 
-        }
+
+		
 
 	}
 
