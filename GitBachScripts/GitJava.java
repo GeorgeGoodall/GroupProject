@@ -26,8 +26,8 @@ public class GitJava{
 		return runProcess(directory, "gitcommit.sh", new String[]{message});
 	}
 
-	public void remove(){
-
+	public String[] remove(String directory, String[] filesToRemove){
+		return runProcess(directory, "gitRemove.sh", filesToRemove);
 	}
 
 	public String[] init(String directory){
@@ -38,9 +38,36 @@ public class GitJava{
 
 	}
 
-	public void gitignore(){
-		// a .gitignore file can be created and eddited to allow files to be ignored
+	public void clone(){
+
 	}
+
+	public void branch(){
+
+	}
+
+	public void checkout(){
+
+	}
+
+	public void remote(){
+
+	}
+
+	public void log(){
+		//git log returns information on last commits (pass -x where x is an int to only see the last x commits)
+	}
+
+	// a .gitignore file can be created and eddited to allow files to be ignored
+	public void getGitIgnore(){
+		
+	}
+
+	public void setGitIgnore(){
+
+	}
+
+
 
 	//git branch MyBranch: makes new branch MyBranch
 	//git checkout MyBranch changes to MyBranch
@@ -93,10 +120,6 @@ public class GitJava{
 		catch(Exception e){System.out.println("Error starting processBuilder: " + e);}
 		
 		return resultlist.toArray(new String[0]);
-
-
-		
-
 	}
 
 
