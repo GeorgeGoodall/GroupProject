@@ -38,7 +38,15 @@ public class GitJava{
 
 	}
 
+	public void push(){
+		// git push [remote] [branch] pushes the branch to the remote
+	}
+
 	public void clone(){
+
+	}
+
+	public void remote(){
 
 	}
 
@@ -50,9 +58,6 @@ public class GitJava{
 
 	}
 
-	public void remote(){
-
-	}
 
 	public void log(){
 		//git log returns information on last commits (pass -x where x is an int to only see the last x commits)
