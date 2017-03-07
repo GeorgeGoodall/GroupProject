@@ -10,6 +10,11 @@ import java.io.File;
 
 public class GitJava{
 
+	/*
+		***notes***
+		need to add the ability to generate ssh keys
+	*/
+
 	public GitJava(){
 
 	}
@@ -34,24 +39,25 @@ public class GitJava{
 		return runProcess(directory, "gitInit.sh", new String[0]);
 	}
 
-	public void pull(){
-
+	public String[] pull(String directory, String repo, String branchname){
+		return runProcess(directory, "gitPull.sh", new String[]{repo,branchname});
 	}
 
-	public void push(){
-		// git push [remote] [branch] pushes the branch to the remote
+	public String[] push(String directory, String repo, String branchname){
+		// git push [remote] [branch] pushes the branch to the remote, push asks for user password but cant give it, need to setup keys
+		return runProcess(directory, "gitPush.sh", new String[]{repo,branchname});
 	}
 
-	public void clone(){
-
+	public String[] gitclone(String directory, String[] args){
+		return runProcess(directory, "gitClone.sh", args);
 	}
 
-	public void remote(){
+	public String[] remote(String directory, String[] args){
+		return runProcess(directory, "gitRemote.sh", args);
+	}	
 
-	}
-
-	public void branch(){
-
+	public String[] branch(String directory, String[] args){
+		return runProcess(directory, "gitBranch.sh", args);
 	}
 
 	public void checkout(){

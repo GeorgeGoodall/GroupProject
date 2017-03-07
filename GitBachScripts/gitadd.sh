@@ -7,7 +7,7 @@ for FILE in "$@"
 do
 	if [ $i -eq 0 ]
 		then
-			cd $testDir
+			cd "$1"
 		else
 			git add $FILE
 		fi

@@ -1,12 +1,14 @@
 #!/bin/bash
+query="git branch"
 i=0
 for FILE in "$@"
 do
 	if [ $i -eq 0 ]
 		then
-			cd $FILE
+			cd "$1"
 		else
-			git rm $FILE
+			query="$query $FILE"
 		fi
 		((i=i+1))
 done
+$query
