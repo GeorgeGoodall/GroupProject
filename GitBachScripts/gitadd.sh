@@ -1,7 +1,5 @@
 #!/bin/bash
 
-testDir="/home/george/Desktop/testDirectory"
-
 i=0
 for FILE in "$@"
 do

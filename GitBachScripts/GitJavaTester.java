@@ -61,7 +61,7 @@ public class GitJavaTester{
 				result = gj.pull(dir,"origin","branch1");
 			}
 			else if(in[0].equals("push")){
-				result = gj.push(dir,"origin","branch1");	
+				result = gj.push(dir,"c1528019@lapis.cs.cf.ac.uk:~/Documents/test_git","b2");	
 			}
 			else if(in[0].equals("remote")){
 				ArrayList<String> perams = new ArrayList<String>();
@@ -83,6 +83,20 @@ public class GitJavaTester{
 					perams.add(in[i]);
 				}
 				result = gj.branch(dir,perams.toArray(new String[0]));
+			}
+			else if(in[0].equals("checkout")){
+				ArrayList<String> perams = new ArrayList<String>();
+				for(int i = 1; i<in.length; i++){
+					perams.add(in[i]);
+				}
+				result = gj.checkout(dir,perams.toArray(new String[0]));
+			}
+			else if(in[0].equals("log")){
+				ArrayList<String> perams = new ArrayList<String>();
+				for(int i = 1; i<in.length; i++){
+					perams.add(in[i]);
+				}
+				result = gj.log(dir,perams.toArray(new String[0]));
 			}
 			else if(in[0].equals("exit")){
 				break;

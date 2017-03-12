@@ -1,6 +1,5 @@
 #!/bin/bash
-echo enter
-query="git push"
+query="git checkout"
 i=0
 for FILE in "$@"
 do
@@ -12,7 +11,4 @@ do
 		fi
 		((i=i+1))
 done
-eval $query
-y="eval $query"
-echo $y
-
+$query

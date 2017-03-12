@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.File;
-
+import java.lang.Thread;
 
 public class GitJava{
 
@@ -44,7 +44,7 @@ public class GitJava{
 	}
 
 	public String[] push(String directory, String repo, String branchname){
-		// git push [remote] [branch] pushes the branch to the remote, push asks for user password but cant give it, need to setup keys
+		// git push [remote] [branch] pushes the branch to the remote,
 		return runProcess(directory, "gitPush.sh", new String[]{repo,branchname});
 	}
 
@@ -60,13 +60,13 @@ public class GitJava{
 		return runProcess(directory, "gitBranch.sh", args);
 	}
 
-	public void checkout(){
-
+	public String[] checkout(String directory, String[] args){
+		return runProcess(directory, "gitCheckout.sh", args);
 	}
 
 
-	public void log(){
-		//git log returns information on last commits (pass -x where x is an int to only see the last x commits)
+	public String[] log(String directory, String[] args){
+		return runProcess(directory, "gitlog.sh", args);
 	}
 
 	// a .gitignore file can be created and eddited to allow files to be ignored
@@ -104,6 +104,7 @@ public class GitJava{
 		ProcessBuilder pb = new ProcessBuilder("/bin/bash");
 		pb.command(perams);
 		pb.directory(new File(System.getProperty("user.dir")));
+		
 		try{
 			Process process = pb.start();
 			//create needed objects to read output
@@ -111,9 +112,11 @@ public class GitJava{
 			InputStreamReader isr = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(isr);
 			String line;
+			int c;
+
 			try{
 				while((line = br.readLine()) != null){
-					resultlist.add(line);
+					resultlist.add(line);;
 				}
 			}
 			catch(Exception e){
