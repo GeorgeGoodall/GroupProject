@@ -61,7 +61,8 @@ public class GitJavaTester{
 				result = gj.pull(dir,"origin","branch1");
 			}
 			else if(in[0].equals("push")){
-				result = gj.push(dir,"c1528019@lapis.cs.cf.ac.uk:~/Documents/test_git","b2");	
+				//c1528019@lapis.cs.cf.ac.uk:~/Documents/test_git
+				result = gj.push(dir,"ssh://git@192.168.0.48/home/git/testrepo","branch2");	
 			}
 			else if(in[0].equals("remote")){
 				ArrayList<String> perams = new ArrayList<String>();
@@ -97,6 +98,26 @@ public class GitJavaTester{
 					perams.add(in[i]);
 				}
 				result = gj.log(dir,perams.toArray(new String[0]));
+			}
+			else if(in[0].equals("merge")){
+				ArrayList<String> perams = new ArrayList<String>();
+				for(int i = 1; i<in.length; i++){
+					perams.add(in[i]);
+				}
+				result = gj.merge(dir,perams.toArray(new String[0]));
+			}
+			else if(in[0].equals("gitignore")){
+				result = gj.getGitIgnore(dir);
+			}
+			else if(in[0].equals("setgitignore")){
+				ArrayList<String> perams = new ArrayList<String>();
+				for(int i = 1; i<in.length; i++){
+					perams.add(in[i]);
+				}
+				gj.setGitIgnore(dir,perams.toArray(new String[0]));
+			}
+			else if(in[0].equals("exit")){
+				break;
 			}
 			else if(in[0].equals("exit")){
 				break;

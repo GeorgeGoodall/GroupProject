@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.io.IOException;
 import java.lang.Thread;
 
 public class GitJava{
@@ -69,25 +72,39 @@ public class GitJava{
 		return runProcess(directory, "gitlog.sh", args);
 	}
 
-	// a .gitignore file can be created and eddited to allow files to be ignored
-	public void getGitIgnore(){
-		
+	public String[] merge(String directory, String[] args){
+		return runProcess(directory, "gitMerge.sh", args);
 	}
 
-	public void setGitIgnore(){
-
+	// a .gitignore file can be created and eddited to allow files to be ignored by git
+	public String[] getGitIgnore(String directory){
+		ArrayList<String> output = new ArrayList<String>();
+		try{
+			FileReader fr = new FileReader(directory + "/.gitignore");
+			BufferedReader br = new BufferedReader(fr);
+			String line = null;
+			while((line = br.readLine()) != null){
+				output.add(line);
+			}
+			br.close();
+		}
+		catch(Exception e){
+			System.out.println("error : " + e);
+		}
+		return output.toArray(new String[0]);
 	}
 
-
-
-	//git branch MyBranch: makes new branch MyBranch
-	//git checkout MyBranch changes to MyBranch
-
-	//git merge MyBranch: must merge from the destination branch, calling the source branch 
-
-	//git push
-
-	//git remote
+	public void setGitIgnore(String directory, String[] lines){
+		try{
+    		PrintWriter writer = new PrintWriter(directory + "/.gitignore", "UTF-8");
+    		for (int i = 0; i<lines.length; i++){
+    			writer.println(lines[i]);
+    		}
+    		writer.close();
+		} catch (IOException e) {
+   			System.out.println("Error setting gitignore : " + e);
+		}
+	}
 
 	private String[] runProcess(String directory,String operation, String[] args){
 

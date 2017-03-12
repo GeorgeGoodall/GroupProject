@@ -1,6 +1,5 @@
 #!/bin/bash
-echo enter
-query="git push"
+query="git push --porcelain" 
 i=0
 for FILE in "$@"
 do
@@ -12,7 +11,6 @@ do
 		fi
 		((i=i+1))
 done
-eval $query
-y="eval $query"
-echo $y
+$query 2>&1
+# 2>&1 redirects consol output so we can read it
 
