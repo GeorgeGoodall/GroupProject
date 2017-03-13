@@ -62,7 +62,7 @@ public class GitJavaTester{
 			}
 			else if(in[0].equals("push")){
 				//c1528019@lapis.cs.cf.ac.uk:~/Documents/test_git
-				result = gj.push(dir,"ssh://git@192.168.0.48/home/git/testrepo","branch2");	
+				result = gj.push(dir,"ssh://ubuntu@10.72.97.107/home/ubuntu/testrepos/testrepo1","b2");	
 			}
 			else if(in[0].equals("remote")){
 				ArrayList<String> perams = new ArrayList<String>();

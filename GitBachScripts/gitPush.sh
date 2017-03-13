@@ -1,4 +1,5 @@
 #!/bin/bash
+echo enter
 query="git push --porcelain" 
 i=0
 for FILE in "$@"
