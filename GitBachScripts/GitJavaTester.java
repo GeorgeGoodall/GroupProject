@@ -42,13 +42,25 @@ public class GitJavaTester{
 				result = gj.add(dir,files.toArray(new String[0]));
 			}
 			else if(in[0].equals("status")){
-				result = gj.status(dir);	
+				rrayList<String> args = new ArrayList<String>();
+				for(int i = 1; i<in.length;i++){
+					args.add(in[i]);
+				}
+				result = gj.status(dir, args.toArray(new String[0]));	
 			}
 			else if(in[0].equals("commit")){
-				result = gj.commit(dir,"test message");
+				ArrayList<String> args = new ArrayList<String>();
+				for(int i = 1; i<in.length;i++){
+					args.add(in[i]);
+				}
+				result = gj.commit(dir,args.toArray(new String[0]));
 			}
 			else if(in[0].equals("init")){
-				result = gj.init(dir);
+				ArrayList<String> args = new ArrayList<String>();
+				for(int i = 1; i<in.length;i++){
+					args.add(in[i]);
+				}
+				result = gj.init(dir,args.toArray(new String[0]));
 			}
 			else if(in[0].equals("remove")){
 				ArrayList<String> files = new ArrayList<String>();

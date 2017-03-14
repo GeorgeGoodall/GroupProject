@@ -22,59 +22,31 @@ public class GitJava{
 
 	}
 
-	public String[] status(String directory){
-		return runProcess(directory, "gitStatus.sh", new String[0]);
-	}
+	public String[] status(String directory, String[] args){ return runProcess(directory, "gitStatus.sh", args); }
 
-	public String[] add(String directory, String[] filesToAdd){
-		return runProcess(directory, "gitadd.sh", filesToAdd);
-	}
+	public String[] add(String directory, String[] args){ return runProcess(directory, "gitadd.sh", args); }
 
-	public String[] commit(String directory, String message){
-		return runProcess(directory, "gitcommit.sh", new String[]{message});
-	}
+	public String[] commit(String directory, String[] args){ return runProcess(directory, "gitcommit.sh", args); }
 
-	public String[] remove(String directory, String[] filesToRemove){
-		return runProcess(directory, "gitRemove.sh", filesToRemove);
-	}
+	public String[] remove(String directory, String[] args){ return runProcess(directory, "gitRemove.sh", args); }
 
-	public String[] init(String directory){
-		return runProcess(directory, "gitInit.sh", new String[0]);
-	}
+	public String[] init(String directory, String[] args){ return runProcess(directory, "gitInit.sh", args); }
 
-	public String[] pull(String directory, String repo, String branchname){
-		return runProcess(directory, "gitPull.sh", new String[]{repo,branchname});
-	}
+	public String[] pull(String directory, String repo, String branchname){ return runProcess(directory, "gitPull.sh", new String[]{repo,branchname}); }
+	
+	public String[] push(String directory, String repo, String branchname){ return runProcess(directory, "gitPush.sh", new String[]{repo,branchname}); }
 
-	public String[] push(String directory, String repo, String branchname){
-		// git push [remote] [branch] pushes the branch to the remote,
-		return runProcess(directory, "gitPush.sh", new String[]{repo,branchname});
-	}
+	public String[] gitclone(String directory, String[] args){ return runProcess(directory, "gitClone.sh", args); }
 
-	public String[] gitclone(String directory, String[] args){
-		return runProcess(directory, "gitClone.sh", args);
-	}
+	public String[] remote(String directory, String[] args){ return runProcess(directory, "gitRemote.sh", args); }	
 
-	public String[] remote(String directory, String[] args){
-		return runProcess(directory, "gitRemote.sh", args);
-	}	
+	public String[] branch(String directory, String[] args){ return runProcess(directory, "gitBranch.sh", args); }
 
-	public String[] branch(String directory, String[] args){
-		return runProcess(directory, "gitBranch.sh", args);
-	}
+	public String[] checkout(String directory, String[] args){ return runProcess(directory, "gitCheckout.sh", args); }
 
-	public String[] checkout(String directory, String[] args){
-		return runProcess(directory, "gitCheckout.sh", args);
-	}
+	public String[] log(String directory, String[] args){ return runProcess(directory, "gitlog.sh", args); }
 
-
-	public String[] log(String directory, String[] args){
-		return runProcess(directory, "gitlog.sh", args);
-	}
-
-	public String[] merge(String directory, String[] args){
-		return runProcess(directory, "gitMerge.sh", args);
-	}
+	public String[] merge(String directory, String[] args){ return runProcess(directory, "gitMerge.sh", args); }
 
 	// a .gitignore file can be created and eddited to allow files to be ignored by git
 	public String[] getGitIgnore(String directory){
@@ -152,7 +124,4 @@ public class GitJava{
 		
 		return resultlist.toArray(new String[0]);
 	}
-
-
-
 }
