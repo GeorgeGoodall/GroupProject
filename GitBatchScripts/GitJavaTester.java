@@ -42,25 +42,25 @@ public class GitJavaTester{
 				result = gj.add(dir,files.toArray(new String[0]));
 			}
 			else if(in[0].equals("status")){
-				rrayList<String> args = new ArrayList<String>();
+				ArrayList<String> perams = new ArrayList<String>();
 				for(int i = 1; i<in.length;i++){
-					args.add(in[i]);
+					perams.add(in[i]);
 				}
-				result = gj.status(dir, args.toArray(new String[0]));	
+				result = gj.status(dir, perams.toArray(new String[0]));	
 			}
 			else if(in[0].equals("commit")){
-				ArrayList<String> args = new ArrayList<String>();
+				ArrayList<String> perams = new ArrayList<String>();
 				for(int i = 1; i<in.length;i++){
-					args.add(in[i]);
+					perams.add(in[i]);
 				}
-				result = gj.commit(dir,args.toArray(new String[0]));
+				result = gj.commit(dir,perams.toArray(new String[0]));
 			}
 			else if(in[0].equals("init")){
-				ArrayList<String> args = new ArrayList<String>();
+				ArrayList<String> perams = new ArrayList<String>();
 				for(int i = 1; i<in.length;i++){
-					args.add(in[i]);
+					perams.add(in[i]);
 				}
-				result = gj.init(dir,args.toArray(new String[0]));
+				result = gj.init(dir,perams.toArray(new String[0]));
 			}
 			else if(in[0].equals("remove")){
 				ArrayList<String> files = new ArrayList<String>();
