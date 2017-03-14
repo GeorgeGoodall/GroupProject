@@ -1,44 +1,48 @@
+
+
 import com.jcraft.jsch.*;
 import java.io.*;
 import java.util.*;
 public class Sftp {
+ String sFTPHOST;
+ int sFTPPORT;
+ String sFTPUSER;
+ String sFTPPASS;
+ Session session;
 
-public  void send() {
-        String sFTPHOST = "websites.cs.cf.ac.uk";
-        int sFTPPORT = 22;
-        String sFTPUSER = "c1526495";
-        String sFTPPASS = "Sharky551";
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please type in directory you wish to place file: ");
-        String sFTPWORKINGDIR = sc.nextLine();
-        Session session = null;
-        System.out.println("Please type in name of file you wish to send: ");
-        String fileName = sc.nextLine();
-        Channel channel = null;
-        ChannelSftp channelSftp = null;
-        System.out.println("preparing the host information for sftp.");
-        try {
-            JSch jsch = new JSch();
-            session = jsch.getSession(sFTPUSER, sFTPHOST, sFTPPORT);
-            session.setPassword(sFTPPASS);
-            java.util.Properties config = new java.util.Properties();
-            config.put("StrictHostKeyChecking", "no");
-            session.setConfig(config);
-            session.connect();
-            System.out.println("Host connected.");
-            channel = session.openChannel("sftp");
-            channel.connect();
-            System.out.println("sftp channel opened and connected.");
-            channelSftp = (ChannelSftp) channel;
-            channelSftp.cd(sFTPWORKINGDIR);
-            File f = new File(fileName);
-            channelSftp.put(new FileInputStream(f), f.getName());
-            System.out.println("File transfered successfully to host.");
 
+public Sftp(String sFTP_HOST, int sFTP_PORT, String sFTP_USER, String sFTP_PASS){
+    sFTPHOST = sFTP_HOST;
+    sFTPPORT = sFTP_PORT;
+    sFTPUSER = sFTP_USER;
+    sFTPPASS = sFTP_PASS;
+    try {
+
+                JSch jsch = new JSch();
+                session = jsch.getSession(sFTPUSER, sFTPHOST, sFTPPORT);
+                session.setPassword(sFTPPASS);
+                java.util.Properties config = new java.util.Properties();
+                config.put("StrictHostKeyChecking", "no");
+                session.setConfig(config);
         } catch (Exception ex) {
              System.out.println("Exception found while tranfer the response.");
         }
-        finally{
+}
+
+public void send(String sFTPWORKINGDIR, String fileName){
+    try{
+    session.connect();
+    Channel channel = session.openChannel("sftp");
+    channel.connect();
+    channelSftp = (ChannelSftp) channel;
+    channelSftp.cd(sFTPWORKINGDIR);
+    File f = new File(fileName);
+    channelSftp.put(new FileInputStream(f), f.getName());
+    System.out.println("File transfered successfully to host.");}
+    catch (Exception ex) {
+             System.out.println("Exception found while tranfer the response." + ex);
+        }
+    finally{
 
             channelSftp.exit();
             System.out.println("sftp Channel exited.");
@@ -47,9 +51,6 @@ public  void send() {
             session.disconnect();
             System.out.println("Host Session disconnected.");
         }
-    }
-    public static void main(String[] args) {
-        Sftp tester = new Sftp();
-        tester.send();
-    }
-        }
+}
+
+}
