@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.25" layoutX="220.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="123.0" prefWidth="598.0">
+               <children>
+                  <ImageView fitHeight="134.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../OneDrive/University/2016-2017/Modules/Group%20Project/interm%20report/background3%20cropped.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="163.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuTeE">
+                     <font>
+                        <Font name="PMingLiU-ExtB" size="96.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="598.0">
+               <children>
+                  <Pane layoutX="163.0" layoutY="16.0" prefHeight="382.0" prefWidth="272.0">
+                     <children>
+                        <TextField layoutY="23.0" prefHeight="36.0" prefWidth="272.0" promptText="USERNAME" styleClass="LoginField">
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField id="PassField" layoutY="77.0" prefHeight="36.0" prefWidth="272.0" promptText="PASSWORD" styleClass="LoginField">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField id="PassField" layoutY="121.0" prefHeight="36.0" prefWidth="272.0" promptText="CONFIRM PASSWORD" styleClass="LoginField">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField id="PassField" layoutY="121.0" prefHeight="36.0" prefWidth="272.0" promptText="CONFIRM PASSWORD" styleClass="LoginField">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <TextField layoutY="173.0" prefHeight="36.0" prefWidth="272.0" promptText="EMAIL" styleClass="LoginField">
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutY="220.0" prefHeight="36.0" prefWidth="272.0" promptText="CONFIRM EMAIL" styleClass="LoginField">
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button id="RegisterButton" layoutY="305.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="278.0" styleClass="LoginButton" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="MS PGothic" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

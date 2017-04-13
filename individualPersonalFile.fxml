@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="default.LoginScene">
+   <children>
+      <SplitPane layoutX="220.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="241.0" prefWidth="598.0">
+               <children>
+                  <ImageView fitHeight="134.0" fitWidth="900.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../OneDrive/University/2016-2017/Modules/Group%20Project/interm%20report/background3%20cropped.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="320.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuTeE">
+                     <font>
+                        <Font name="PMingLiU-ExtB" size="96.0" />
+                     </font>
+                  </Text>
+                  <SplitPane dividerPositions="0.17483296213808464" layoutX="-1.0" layoutY="132.0" prefHeight="468.0" prefWidth="900.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" height="32.0" layoutX="8.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="687.0">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#1b77cdd1" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Rectangle>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[ FILE NAME ]" wrappingWidth="127.13671875">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8cc8ff6c" height="343.0" layoutX="129.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="446.0" />
+                              <Text fill="WHITE" layoutX="203.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[EXAMPLE FILE]" wrappingWidth="331.13671875">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="129.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST MODIFIED: dd/mm/yy  time" wrappingWidth="446.0">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
