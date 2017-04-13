@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="openingScreenController">
+   <children>
+      <ImageView fitHeight="608.0" fitWidth="909.0" layoutX="-4.0" layoutY="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../OneDrive/University/2016-2017/Modules/Group%20Project/interm%20report/background3%20blured.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="260.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuTeE" wrappingWidth="380.453125">
+         <font>
+            <Font name="PMingLiU-ExtB" size="140.0" />
+         </font>
+      </Text>
+      <Text layoutX="260.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  All you need in one place. Secure and easy to access.">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="244.0" layoutY="215.0" mnemonicParsing="false" onAction="#showLoginScreen" prefHeight="179.0" prefWidth="411.0" text="Button" />
+   </children>
+</AnchorPane>

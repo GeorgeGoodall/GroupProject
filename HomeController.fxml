@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+   <children>
+      <SplitPane dividerPositions="0.25" layoutX="220.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="123.0" prefWidth="598.0">
+               <children>
+                  <ImageView fitHeight="147.0" fitWidth="898.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../OneDrive/University/2016-2017/Modules/Group%20Project/interm%20report/background3%20cropped.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="319.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuTeE">
+                     <font>
+                        <Font name="PMingLiU-ExtB" size="96.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="598.0">
+               <children>
+                  <Button layoutY="108.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="574.0" text="FILES" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="MS PGothic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="LoginField" />
+                        <String fx:value="LoginButton" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="324.0" layoutY="268.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="574.0" text="GROUPS" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="MS PGothic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="LoginField" />
+                        <String fx:value="LoginButton" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
