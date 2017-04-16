@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalendarController">
+   <children>
+      <SplitPane dividerPositions="0.25" layoutX="156.0" layoutY="53.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="132.0" prefWidth="898.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <ImageView fitHeight="158.0" fitWidth="900.0" layoutX="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@17198585_1469612149716688_601885293_n.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.175" layoutX="-15.0" prefHeight="286.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.175" prefHeight="444.0" prefWidth="153.0" SplitPane.resizableWithParent="false">
+                           <children>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="204.0" prefWidth="153.0">
+                                 <children>
+                                    <JFXButton onAction="#handleButtonAction" onMouseClicked="#handleButtononAction" prefHeight="50.0" prefWidth="193.0" text="Home" />
+                                    <JFXButton prefHeight="50.0" prefWidth="193.0" text="View File" />
+                                    <JFXButton prefHeight="50.0" prefWidth="192.0" text="Create File" />
+                                    <JFXButton prefHeight="50.0" prefWidth="153.0" text="Archive" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="8.0" layoutY="215.0" prefHeight="84.0" prefWidth="153.0">
+                                 <children>
+                                    <Label text="[GROUP NAME]" />
+                                    <Label text="Username1" />
+                                    <Label text="Username2" />
+                                    <Label text="Username3" />
+                                    <Label text="Username4" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox layoutX="575.0" prefHeight="430.0" prefWidth="160.0">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="101.0" text="Tasks">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" text="Task 1" />
+                                    <Label prefHeight="17.0" prefWidth="128.0" text="Set By User dd/mm/yy">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" text="Task 2" />
+                                    <Label prefHeight="17.0" prefWidth="127.0" text="Set By User dd/mm/yy">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" text="Task 3" />
+                                    <Label prefHeight="17.0" prefWidth="127.0" text="Set By User dd/mm/yy">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="34.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@git.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXToggleButton prefHeight="24.0" prefWidth="101.0" text="GitLab">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </JFXToggleButton>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="273.0" layoutY="205.0" text="Calendar">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
