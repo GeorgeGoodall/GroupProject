@@ -1,68 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleButtononAction" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalendarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
    <children>
-      <SplitPane fx:id="rootPane" dividerPositions="0.25" layoutX="129.0" layoutY="47.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="442.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+      <SplitPane dividerPositions="0.25" layoutX="220.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="123.0" prefWidth="598.0">
                <children>
-                  <SplitPane dividerPositions="0.175" layoutX="61.0" layoutY="140.0" prefHeight="314.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                      <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="312.0" prefWidth="135.0">
-                           <children>
-                              <JFXDrawer fx:id="drawer" layoutX="-5.0" layoutY="-5.0" prefHeight="449.0" prefWidth="146.0">
-                                 <children>
-                                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="146.0">
-                                       <children>
-                                          <JFXButton prefHeight="50.0" prefWidth="193.0" text="Home" />
-                                          <JFXButton onAction="#loadViewFile" prefHeight="50.0" prefWidth="193.0" text="View File" />
-                                          <JFXButton prefHeight="50.0" prefWidth="192.0" text="Create File" />
-                                          <JFXButton prefHeight="50.0" prefWidth="193.0" text="Archive" />
-                                          <JFXButton prefHeight="50.0" prefWidth="197.0" text="Download FIle" />
-                                          <JFXButton prefHeight="50.0" prefWidth="198.0" text="Email File" />
-                                          <JFXButton prefHeight="50.0" prefWidth="196.0" text="Delete File" />
-                                          <JFXButton prefHeight="50.0" prefWidth="193.0" text="Upload File" />
-                                       </children>
-                                    </VBox>
-                                 </children></JFXDrawer>
-                           </children></AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="312.0" prefWidth="427.0">
-                           <children>
-                              <Label layoutX="310.0" layoutY="11.0" prefHeight="52.0" prefWidth="90.0" text="Home" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="29.0" />
-                                 </font>
-                              </Label>
-                              <JFXButton layoutX="14.0" layoutY="88.0" text="My Files">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </JFXButton>
-                              <JFXButton layoutX="429.0" layoutY="274.0" onAction="#loadViewAllGroups" text="Groups">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
+                  <ImageView fitHeight="147.0" fitWidth="898.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../OneDrive/University/2016-2017/Modules/Group%20Project/interm%20report/background3%20cropped.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="319.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QuTeE">
+                     <font>
+                        <Font name="PMingLiU-ExtB" size="96.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
-        </items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="598.0">
+               <children>
+                  <Button fx:id="btn_viewFiles" layoutY="108.0" mnemonicParsing="false" onAction="#showPersonalFiles" prefHeight="45.0" prefWidth="574.0" text="FILES" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="MS PGothic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="LoginField" />
+                        <String fx:value="LoginButton" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btn_showGroups" layoutX="324.0" layoutY="268.0" mnemonicParsing="false" onAction="#showGroups" prefHeight="45.0" prefWidth="574.0" text="GROUPS" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="MS PGothic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="LoginField" />
+                        <String fx:value="LoginButton" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
       </SplitPane>
-      <ImageView fitHeight="147.0" fitWidth="900.0">
-         <image>
-            <Image url="@17198585_1469612149716688_601885293_n.jpg" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
