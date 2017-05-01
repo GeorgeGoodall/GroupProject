@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="146.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton prefHeight="50.0" prefWidth="193.0" text="Home" />
+      <JFXButton prefHeight="50.0" prefWidth="193.0" text="View File" />
+      <JFXButton prefHeight="50.0" prefWidth="192.0" text="Create File" />
+      <JFXButton prefHeight="50.0" prefWidth="193.0" text="Archive" />
+      <JFXButton prefHeight="50.0" prefWidth="197.0" text="Download FIle" />
+      <JFXButton prefHeight="50.0" prefWidth="198.0" text="Email File" />
+      <JFXButton prefHeight="50.0" prefWidth="196.0" text="Delete File" />
+      <JFXButton prefHeight="50.0" prefWidth="193.0" text="Upload File" />
+   </children>
+</VBox>

@@ -18,7 +18,7 @@ public class loginSceneController{
 		txt_error.setVisible(true);
 		((Node) (event.getSource())).getScene().getWindow().hide();
 		Stage stage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("/HomeController.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/Home.fxml"));
 		Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Login");
